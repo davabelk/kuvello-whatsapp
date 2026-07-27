@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Kuvello — WhatsApp Bot Services by david belikov">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d6a53"/>
+      <stop offset="0.55" stop-color="#0b5c48"/>
+      <stop offset="1" stop-color="#062a20"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d8f0df"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.7">
+      <stop offset="0" stop-color="#1f8f70" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#1f8f70" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <!-- Mark -->
+    <rect x="90" y="96" width="96" height="96" rx="24" fill="url(#mark)"/>
+    <path d="M120 116 V172 M120 145 L152 120 M120 143 L152 168"
+          fill="none" stroke="#0b5c48" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="210" y="150" fill="#ffffff" font-size="46" font-weight="800" letter-spacing="-1">Kuvello</text>
+    <text x="212" y="182" fill="#bfe7d7" font-size="24" font-weight="600">WhatsApp Bot Services by david belikov</text>
+
+    <!-- Headline -->
+    <text x="90" y="330" fill="#ffffff" font-size="70" font-weight="800" letter-spacing="-2">WhatsApp Business API</text>
+    <text x="90" y="410" fill="#ffffff" font-size="70" font-weight="800" letter-spacing="-2">chatbots, built &amp; run for you</text>
+
+    <text x="90" y="482" fill="#cfe8dd" font-size="30" font-weight="500">Appointment booking · reminders · patient FAQ automation</text>
+
+    <!-- Footer line -->
+    <text x="90" y="560" fill="#9fd8c3" font-size="26" font-weight="600">+1 626-471-8648</text>
+    <text x="360" y="560" fill="#6fae99" font-size="26" font-weight="500">·</text>
+    <text x="388" y="560" fill="#9fd8c3" font-size="26" font-weight="600">support@kuvello.com</text>
+    <text x="720" y="560" fill="#6fae99" font-size="26" font-weight="500">·</text>
+    <text x="748" y="560" fill="#9fd8c3" font-size="26" font-weight="600">Ramle, Israel</text>
+  </g>
+</svg>
