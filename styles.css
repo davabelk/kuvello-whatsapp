@@ -312,6 +312,27 @@ strong { color: var(--ink); }
 .steps p { margin: 0; color: var(--ink-soft); font-size: .97rem; }
 @media (min-width: 720px) { .steps { grid-template-columns: 1fr 1fr; } }
 
+/* ---- FAQ ----------------------------------------------------------------- */
+.faq { display: grid; gap: .75rem; max-width: 52rem; }
+.faq details {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm);
+  overflow: hidden; transition: border-color .15s ease;
+}
+.faq details[open] { border-color: var(--brand-tint-2); }
+.faq summary {
+  cursor: pointer; font-weight: 650; color: var(--ink);
+  padding: 1rem 1.2rem; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; font-weight: 700; color: var(--brand); font-size: 1.25rem; line-height: 1;
+  flex: none; transition: transform .18s ease;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary:hover { color: var(--brand-dark); }
+.faq details p { margin: 0; padding: 0 1.2rem 1.1rem; color: var(--ink-soft); }
+
 /* ---- Contact block ------------------------------------------------------- */
 .contact-band { background: linear-gradient(160deg, var(--brand-deep), var(--brand-dark)); color: #eaf5ef; }
 .contact-band h2, .contact-band h3 { color: #fff; }
