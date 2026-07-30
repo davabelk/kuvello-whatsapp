@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davabelk.github.io/kuvello-whatsapp/sitemap.xml
+Sitemap: https://kuvello.com/sitemap.xml
