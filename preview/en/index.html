@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kuvello — WhatsApp assistant for dental clinics</title>
+<meta name="description" content="Kuvello answers patients on the clinic's WhatsApp number, books appointments into the diary and sends reminders. Staff only get what needs a person.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="he" href="../">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<!-- PREVIEW ONLY: noindex, not linked from the live site. -->
+<div class="preview-bar">Preview — not live. The WhatsApp demo number is still missing.</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">Kuvello</a>
+    <nav class="nav" aria-label="Main">
+      <a class="lang" href="../" hreflang="he" lang="he">עברית</a>
+      <a class="btn btn-primary" href="#demo-pending">Try it on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow">WhatsApp assistant for dental clinics</p>
+        <h1>Every WhatsApp message gets an answer. Even when the front desk is busy.</h1>
+        <p class="lead">Kuvello answers patients on the clinic's own WhatsApp number, books appointments straight into the diary and sends reminders. Your team only gets what actually needs a person.</p>
+        <ul class="outcomes">
+          <li>No message left unanswered, evenings and weekends included</li>
+          <li>A fuller schedule: patients book in a few taps</li>
+          <li>A reminder before each visit with one-tap confirmation, to cut no-shows</li>
+          <li>Less front-desk load: hours, prices and location answered automatically</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="#demo-pending">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l2-5.6a8.4 8.4 0 0 1-1-3.9A8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg>
+            Try it on WhatsApp now
+          </a>
+          <a class="btn btn-ghost" href="mailto:support@kuvello.com?subject=15-minute%20demo">Book a 15-minute demo</a>
+        </div>
+      </div>
+
+      <!-- Every bot line below is the engine's own copy (app/copy_he.py), unedited. -->
+      <div class="phone" role="img" aria-label="Example WhatsApp conversation in Hebrew: booking an appointment" dir="rtl" lang="he">
+        <div class="phone-screen">
+          <div class="wa-top"><span class="av">K</span><div>מרפאת השיניים<small>חשבון עסקי</small></div></div>
+          <div class="wa-chat">
+            <div class="msg out">שלום, אפשר לקבוע תור לבדיקה?<time>09:41</time></div>
+            <div class="msg in">לאיזה יום נקבע? 🗓<span class="list-btn">☰ לבחירה</span><time>09:41</time></div>
+            <div class="msg out">יום חמישי 1.10<time>09:41</time></div>
+            <div class="msg in">יום חמישי 1.10 — באיזו שעה?<span class="list-btn">☰ לבחירה</span><time>09:41</time></div>
+            <div class="msg out">10:00<time>09:42</time></div>
+            <div class="msg in">מעולה. מה השם המלא שלך, בבקשה?<time>09:42</time></div>
+            <div class="msg out">נועה לוי<time>09:42</time></div>
+            <div class="msg in">מצוין! התור שלך לבדיקה תקופתית נקבע ל-1.10 בשעה 10:00. נתראה, ותודה 😊<time>09:42</time></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft product" id="product">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The product</p>
+        <h2>Patients on WhatsApp. Your team on one screen.</h2>
+        <p class="lead">WhatsApp's own buttons, no app and no outside links. The bot speaks Hebrew. On the clinic side: appointments, urgent requests and live chats in one place.</p>
+      </div>
+      <div class="grid">
+        <div>
+          <div class="phone" role="img" aria-label="Appointment reminder in Hebrew with three reply buttons" dir="rtl" lang="he">
+            <div class="phone-screen">
+              <div class="wa-top"><span class="av">K</span><div>מרפאת השיניים<small>חשבון עסקי</small></div></div>
+              <div class="wa-chat">
+                <div class="msg in">שלום נועה 👋
+
+זוהי תזכורת לגבי התור הקרוב שלכם ל-בדיקה תקופתית ב-1.10 בשעה 10:00 🗓️
+
+מצפים לראותכם! 😊<time>10:00</time></div>
+                <div class="wa-btns"><a>אגיע</a><a>לשנות מועד</a><a>לבטל את התור</a></div>
+              </div>
+            </div>
+          </div>
+          <p class="wa-note">A reminder the day before and again two hours before, with three reply buttons: I'll come, reschedule, cancel</p>
+        </div>
+        <div>
+          <div class="shot"><img src="../assets/crm-queue.webp" width="1600" height="533" alt="Staff screen: the attention queue, with an urgent request flagged at the top" loading="lazy"></div>
+          <div class="shot"><img src="../assets/crm-diary.webp" width="1600" height="709" alt="Staff screen: the appointment diary booked through the bot" loading="lazy"></div>
+          <p class="caption">Kuvello's real staff screen (in Hebrew). Names and numbers in the screenshots are demo data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Three steps to a bot that answers</h2>
+      </div>
+      <div class="cards c3">
+        <div class="card"><span class="num">1</span><h3>Connect the clinic's WhatsApp</h3><p>The bot answers on the number patients already know, through the official WhatsApp Business Platform.</p></div>
+        <div class="card"><span class="num">2</span><h3>Set hours, treatments and diary</h3><p>The bot is built on your clinic's data: opening hours, treatments, prices and the appointment diary.</p></div>
+        <div class="card"><span class="num">3</span><h3>The bot answers, your team stays in control</h3><p>Every conversation is visible to staff. Take over any chat at any moment and reply yourself.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="safety">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Emergency protocol</p>
+        <h2>In an emergency, the bot doesn't improvise</h2>
+        <p class="lead">When a patient writes about pain, swelling or bleeding, no language model decides the reply. The behaviour is written in code, and the sentences the patient receives are fixed and approved in advance.</p>
+      </div>
+      <div class="safety-list">
+        <div class="card"><h3>Detected by fixed rules</h3><p>Words like pain, swelling, bleeding or a broken tooth move the conversation onto the emergency path. The rules run before the language model and override it.</p></div>
+        <div class="card"><h3>The nearest slot, or the clinic's phone</h3><p>The bot offers the nearest available times. Any reply that isn't a clear choice, such as "maybe" or "I don't know", stops the conversation and gives the clinic's phone in the same message. It never asks again and never ends on a question.</p></div>
+        <div class="card"><h3>Outside opening hours</h3><p>The very first reply, next to the times, already points to Magen David Adom 101 or the nearest emergency room.</p></div>
+        <div class="card"><h3>No medical answers</h3><p>The bot answers no medical questions and never judges severity; it refers the patient to staff. When a patient describes a life-threatening non-dental situation, such as chest pain or trouble breathing, the 101 line is added too.</p></div>
+        <div class="card"><h3>Staff see it at once</h3><p>An urgent request goes to the top of the staff attention queue, flagged as an emergency, and stays there until someone marks it handled.</p></div>
+        <div class="card"><h3>No "you're booked" without a verified write</h3><p>The bot confirms an appointment only after the diary has confirmed the booking. If it wasn't verified, the patient gets the clinic's phone, not a confirmation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Patient data</p>
+        <h2>What's stored, where, and for how long</h2>
+      </div>
+      <dl class="facts">
+        <div><dt>Where</dt><dd>On a dedicated Kuvello server in an Amsterdam data centre (DigitalOcean, EU). The messages themselves travel through Meta's WhatsApp.</dd></div>
+        <div><dt>What</dt><dd>Name, WhatsApp number, appointment details and the conversation with the bot. The bot never asks for an ID number: a block in the code stops any such request from being sent.</dd></div>
+        <div><dt>How long</dt><dd>Conversation transcripts are deleted automatically after 30 days. Server backups are deleted after three days at most. Appointment records are kept until deletion is requested.</dd></div>
+        <div><dt>Deletion</dt><dd>A patient who sends "הסר" (stop) gets no further messages, immediately. A request to delete all data is completed within 30 days. <a href="https://bot.kuvello.com/data-deletion">Data deletion instructions</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="soft" id="faq">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">FAQ</p><h2>What clinics ask</h2></div>
+      <div class="faq">
+        <details><summary>Do patients need to install anything?</summary><p>No. They message the clinic's WhatsApp number, as they always have.</p></details>
+        <details><summary>Which language does the bot speak?</summary><p>Hebrew. A message in another language gets a reply that the service is available in Hebrew only.</p></details>
+        <details><summary>What happens when the bot doesn't understand?</summary><p>It asks once for the message in other words. If it's still unclear, it gives the clinic's phone. Staff see the conversation and can continue it themselves.</p></details>
+        <details><summary>Is this allowed by WhatsApp?</summary><p>Yes. Kuvello runs on Meta's official WhatsApp Business Platform, and a patient who writes "הסר" (stop) gets no further messages.</p></details>
+        <details><summary>Who will I be working with?</summary><p>Directly with the person who built the system. No call centre, no middlemen.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Want to see how it would work at your clinic?</h2>
+      <p class="lead">Message the demo bot, or book a 15-minute call.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#demo-pending">Try it on WhatsApp now</a>
+        <a class="btn btn-ghost" href="mailto:support@kuvello.com?subject=15-minute%20demo">Book a 15-minute demo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>Kuvello</h3><p>WhatsApp assistant for dental clinics.</p></div>
+      <div>
+        <h3>Business details</h3>
+        <ul>
+          <li>David Belikov (דוד בליקוב), trading as Kuvello</li>
+          <!-- TAX-ID-ROW hidden until the עוסק number is issued: <li>עוסק no. [PENDING_TAX_ID]</li> -->
+          <li><span dir="rtl">הלל אברהם 1 מס’ 7 רמלה 7222701</span><br>Hillel Avraham 1, No. 7, Ramle 7222701, Israel</li>
+          <li><a class="ltr" href="tel:+972527458646">0527458646</a> · <a href="mailto:support@kuvello.com">support@kuvello.com</a></li>
+          <li>Sunday–Thursday, 09:00–18:00 IST</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <ul>
+          <li><a href="legal.html">Legal details</a></li>
+          <li><a href="https://bot.kuvello.com/privacy">Privacy policy</a></li>
+          <li><a href="https://bot.kuvello.com/data-deletion">Data deletion</a></li>
+          <li><a href="../../terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">© 2026 David Belikov. WhatsApp is a trademark of Meta Platforms, Inc. Kuvello is independent and is not affiliated with, endorsed by, or sponsored by Meta.</p>
+  </div>
+</footer>
+</body>
+</html>
