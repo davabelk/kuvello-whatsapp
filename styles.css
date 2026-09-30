@@ -401,6 +401,10 @@ article.doc .updated { color: var(--ink-mute); font-size: .9rem; }
 .aside-card .contact-list .ck { color: var(--ink-mute); }
 .aside-card .contact-list .cv { color: var(--ink); }
 .aside-card .contact-list a.cv { color: var(--brand-dark); }
+.form-card .contact-list .ci { background: var(--brand-tint); color: var(--brand-deep); border-color: var(--brand-tint-2); }
+.form-card .contact-list .ck { color: var(--ink-mute); }
+.form-card .contact-list .cv { color: var(--ink); }
+.form-card .contact-list a.cv { color: var(--brand-dark); }
 .aside-card .addr-translit { color: var(--ink-mute); }
 
 /* ---- Form ---------------------------------------------------------------- */
