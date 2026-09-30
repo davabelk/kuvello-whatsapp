@@ -1,103 +1,368 @@
-<!doctype html>
-<!--
-  kuvello.com -- DRAFT for Meta business verification (30 Sep 2026).
-  Every identity line must match the עוסק certificate and the bank letter
-  (אישור ניהול חשבון) CHARACTER FOR CHARACTER. Address and phone were set
-  from the owner's bank letter on 30 Sep 2026 -- do not reformat them.
-  The bracketed registration line stays a placeholder until the עוסק
-  number is issued.
-  Served by GitHub Pages; the CNAME file next to this one binds kuvello.com.
--->
-<html lang="he" dir="rtl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuvello — עוזר וואטסאפ למרפאות שיניים</title>
-<meta name="description" content="Kuvello: עוזר וואטסאפ למרפאות שיניים בישראל. WhatsApp assistant for dental clinics in Israel.">
-<style>
-  :root { --bg:#fff; --fg:#1d2327; --muted:#5b6770; --line:#e3e7ea; --accent:#128c7e; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#14181b; --fg:#e8ecee; --muted:#9aa6ae; --line:#2a3136; --accent:#3cc7b4; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuvello — WhatsApp Bot Services by David Belikov</title>
+  <meta name="description" content="Kuvello builds and runs WhatsApp appointment-booking and patient-communication bots for dental clinics — bookings, reminders and patient FAQs. Operated solo by David Belikov, Ramle, Israel.">
+  <meta name="theme-color" content="#0b474c">
+  <link rel="canonical" href="https://kuvello.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kuvello">
+  <meta property="og:title" content="Kuvello — WhatsApp Bot Services by David Belikov">
+  <meta property="og:description" content="WhatsApp appointment-booking and patient-communication bots for dental clinics — bookings, reminders and patient FAQs. Operated solo by David Belikov, Ramle, Israel.">
+  <meta property="og:url" content="https://kuvello.com/">
+  <meta property="og:image" content="https://kuvello.com/og-image.svg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kuvello — WhatsApp Bot Services by David Belikov">
+  <meta name="twitter:description" content="WhatsApp appointment-booking and patient-communication bots for dental clinics. Operated solo by David Belikov, Ramle, Israel.">
+  <meta name="twitter:image" content="https://kuvello.com/og-image.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://kuvello.com/#business",
+    "name": "Kuvello",
+    "legalName": "דוד בליקוב",
+    "alternateName": "Kuvello — WhatsApp Bot Services by David Belikov",
+    "description": "WhatsApp automation service for dental clinics, operated by David Belikov as a sole proprietor. Kuvello builds and runs WhatsApp appointment-booking, reminder and patient-FAQ bots on the WhatsApp Business Platform.",
+    "url": "https://kuvello.com/",
+    "image": "https://kuvello.com/og-image.svg",
+    "email": "support@kuvello.com",
+    "telephone": "+972527458646",
+    "founder": { "@type": "Person", "name": "David Belikov" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "הלל אברהם 1 מס’ 7",
+      "addressLocality": "Ramle",
+      "postalCode": "7222701",
+      "addressCountry": "IL"
+    },
+    "areaServed": "Worldwide",
+    "availableLanguage": ["en", "he"],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+972527458646",
+      "email": "support@kuvello.com",
+      "contactType": "customer service",
+      "availableLanguage": ["en", "he"]
+    }, {
+      "@type": "ContactPoint",
+      "telephone": "+16264718648",
+      "contactType": "WhatsApp",
+      "availableLanguage": ["en", "he"]
+    }]
   }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg);
-         font:17px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
-  h1 { font-size:2rem; margin:0 0 4px; }
-  h2 { font-size:1.2rem; margin:36px 0 8px; }
-  .lead { color:var(--muted); margin:0 0 24px; }
-  ul { padding-inline-start:1.2em; }
-  a { color:var(--accent); }
-  .card { border:1px solid var(--line); border-radius:10px; padding:16px 20px; }
-  .card dl { display:grid; grid-template-columns:max-content 1fr; gap:6px 16px; margin:0; }
-  .card dt { color:var(--muted); }
-  .card dd { margin:0; }
-  section[lang="en"] { direction:ltr; text-align:left; margin-top:48px;
-                       border-top:1px solid var(--line); padding-top:24px; }
-  footer { margin-top:48px; color:var(--muted); font-size:.9rem; }
-</style>
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do patients need to install anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. Patients use the WhatsApp they already have — they just message the clinic's number the same way they'd message anyone else." } },
+      { "@type": "Question", "name": "Does it work in Hebrew?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. I build the conversations in Hebrew, English, or both, and the bot replies in the language the patient writes in." } },
+      { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "A one-time setup fee plus a flat monthly fee, agreed before we start — no surprises later. There's no long-term contract: it runs month to month, and you can stop anytime." } },
+      { "@type": "Question", "name": "How long does setup take?", "acceptedAnswer": { "@type": "Answer", "text": "Usually one to two weeks. Most of that is WhatsApp's own review of the clinic's number and message templates — building the bot itself takes days, not months." } },
+      { "@type": "Question", "name": "What happens when the bot gets stuck?", "acceptedAnswer": { "@type": "Answer", "text": "It stops guessing and hands the conversation to the clinic's front desk with the chat history attached. Patients are never left arguing with a machine." } },
+      { "@type": "Question", "name": "Is this allowed by WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — it runs on the official WhatsApp Business Platform, messages only people who opted in, and every patient can reply STOP at any time. WhatsApp is a trademark of Meta Platforms, Inc.; Kuvello is independent and not affiliated with Meta." } }
+    ]
+  }
+  </script>
 </head>
 <body>
-<main>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<h1>Kuvello</h1>
-<p class="lead">עוזר וואטסאפ למרפאות שיניים בישראל</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Kuvello — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M11 7.5 V24.5 M11 16.5 L20.5 8 M11 15.5 L20.5 24" fill="none" stroke="#fff" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Kuvello</span>
+          <span class="brand-tag">WhatsApp Bot Services by David Belikov</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<p>Kuvello עונה למטופלים של המרפאה בוואטסאפ, על המספר של המרפאה עצמה:
-שעות פתיחה, מחירים ומיקום, קביעת תורים וביטולם ביומן המרפאה, ותזכורות לפני התור.
-שאלות רפואיות ומקרים דחופים מועברים תמיד לצוות המרפאה.</p>
+  <main id="main">
 
-<h2>מה המרפאה מקבלת</h2>
-<ul>
-  <li>מענה מיידי למטופלים, גם מחוץ לשעות הפעילות</li>
-  <li>קביעת תור וביטול תור ישירות ביומן המרפאה</li>
-  <li>תזכורות לתורים בוואטסאפ, רק למטופלים שהסכימו לקבל אותן</li>
-  <li>העברה לצוות בכל שאלה רפואית או דחופה</li>
-</ul>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">WhatsApp automation for dental clinics</p>
+          <h1 id="hero-h">Your clinic's WhatsApp, answered — bookings, reminders and patient questions.</h1>
+          <p class="lead">Kuvello is one person, not an agency: I'm <strong>David Belikov</strong>, a sole proprietor working from Ramle, Israel. I build and run WhatsApp Business API bots for dental clinics — the bot books and reschedules appointments, sends reminders and answers routine patient questions in the clinic's own WhatsApp chat, in Hebrew or English, and hands anything unusual to your front desk.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="contact.html">Contact Kuvello</a>
+            <a class="btn btn-ghost" href="tel:+972527458646">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z"/></svg>
+              Call 0527458646
+            </a>
+          </div>
+          <p class="hero-meta">Operated from Ramle, Israel · <a href="mailto:support@kuvello.com">support@kuvello.com</a></p>
+        </div>
 
-<h2>פרטי העסק</h2>
-<div class="card">
-  <dl>
-    <dt>שם העסק</dt><dd>דוד בליקוב</dd>
-    <dt>פועל בשם</dt><dd>Kuvello</dd>
-    <dt>סוג</dt><dd>עוסק מס' [PENDING_TAX_ID]</dd>
-    <dt>כתובת</dt><dd>הלל אברהם 1 מס’ 7 רמלה 7222701</dd>
-    <dt>טלפון</dt><dd dir="ltr">0527458646</dd>
-    <dt>דוא"ל</dt><dd><a href="mailto:support@kuvello.com">support@kuvello.com</a></dd>
-  </dl>
-</div>
+        <div class="hero-visual">
+          <div class="chat-card" role="img" aria-label="Illustration of a WhatsApp conversation: a patient books a dental appointment and the Kuvello bot confirms it and offers a reminder.">
+            <div class="chat-head">
+              <span class="chat-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9.5 16h5"/></svg>
+              </span>
+              <div>
+                <p class="chat-name">Dental clinic</p>
+                <p class="chat-status">Kuvello bot · online · עברית / English</p>
+              </div>
+            </div>
+            <div class="chat-body">
+              <div class="bubble in">Hi! I'd like to book a teeth cleaning.</div>
+              <div class="bubble out">Happy to help. What day works best for you?</div>
+              <div class="bubble in">Thursday morning if possible.</div>
+              <div class="bubble out">Thursday at 09:30 is open. Shall I book it and send a reminder the day before?</div>
+              <div class="bubble in">Yes, please.</div>
+              <div class="bubble out">Booked. You'll get a reminder on Wednesday. Anything else I can help with?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2>פרטיות</h2>
-<p><a href="https://bot.kuvello.com/privacy">מדיניות פרטיות</a> ·
-<a href="https://bot.kuvello.com/data-deletion">מחיקת מידע</a></p>
+    <!-- TRUST STRIP -->
+    <div class="trust">
+      <div class="container trust-grid">
+        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.6 8.6 0 0 1-3.9-.9L3 20l1-5a8.4 8.4 0 1 1 17-3.5Z"/></svg>Hebrew &amp; English conversations</span>
+        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Bookings, reschedules &amp; reminders</span>
+        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.9"/></svg>Front-desk handoff when needed</span>
+        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>Opt-in only — patients can reply STOP</span>
+      </div>
+    </div>
 
-<section lang="en">
-  <h2>About Kuvello</h2>
-  <p>Kuvello is a WhatsApp assistant for dental clinics in Israel. A clinic
-  connects its own WhatsApp Business number, and Kuvello answers its patients
-  on that number: opening hours, prices and location, booking and cancelling
-  appointments in the clinic's calendar, and appointment reminders for
-  patients who opted in. Medical and urgent questions are always handed to
-  the clinic's staff.</p>
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-labelledby="services-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2 id="services-h">What I set up for a clinic</h2>
+          <p>I do the whole thing myself — the WhatsApp number, the approved message templates, the conversation flows and the connection to your calendar or CRM — and then I keep running it. It follows WhatsApp's messaging and opt-in rules, and your front desk stays in the loop.</p>
+        </div>
+        <ul class="cards">
+          <li class="card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M9 10h.01M13 10h.01M17 10h.01"/></svg></span>
+            <h3>WhatsApp Business API chatbot setup</h3>
+            <p>Provisioning and configuration of the clinic's WhatsApp Business API number, approved message templates, and an automated bot that greets patients, answers common questions, and routes each conversation to the right next step.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M9 15l2 2 4-4"/></svg></span>
+            <h3>Appointment booking &amp; reminder automation</h3>
+            <p>Booking, rescheduling, and cancellation flows for dental clinics, with confirmation messages and timed reminders that help reduce no-shows — all handled inside the patient's own WhatsApp chat.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6a2 2 0 0 1 2 2v0h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1a2 2 0 0 1 2-2Z"/><path d="M9 4a1 1 0 0 0-1 1v1h8V5a1 1 0 0 0-1-1M8 12h8M8 16h5"/></svg></span>
+            <h3>Patient FAQ &amp; intake automation</h3>
+            <p>Instant answers to the questions patients ask most — hours, location, pricing, insurance, and how to prepare — plus a structured intake that collects the details a clinic needs before the visit.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6M10.5 6.5l1-1a4 4 0 0 1 6 6l-1 1M13.5 17.5l-1 1a4 4 0 0 1-6-6l1-1"/></svg></span>
+            <h3>CRM integration</h3>
+            <p>Connection to CRM platforms such as GoHighLevel / LeadConnector, so patient contacts, appointments, and conversation history stay in sync with the tools the clinic already uses.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-  <h2>Business details</h2>
-  <div class="card">
-    <dl>
-      <dt>Legal name</dt><dd>David Belikov (דוד בליקוב)</dd>
-      <dt>Trading as</dt><dd>Kuvello</dd>
-      <dt>Registration</dt><dd>Registered dealer (עוסק), Israel, no. [PENDING_TAX_ID]</dd>
-      <dt>Address</dt><dd dir="rtl">הלל אברהם 1 מס’ 7 רמלה 7222701</dd>
-      <dt>Phone</dt><dd><span dir="ltr">0527458646</span></dd>
-      <dt>Email</dt><dd><a href="mailto:support@kuvello.com">support@kuvello.com</a></dd>
-    </dl>
-  </div>
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-h" style="background:var(--surface-2);border-block:1px solid var(--line-soft);">
+      <div class="container split">
+        <div class="prose">
+          <p class="eyebrow">About</p>
+          <h2 id="about-h">About Kuvello</h2>
+          <p>Kuvello is one person: me, <strong>David Belikov</strong>. I work from Ramle, Israel, as a sole proprietor — no agency, no staff, no investors. When a clinic works with Kuvello, the person who designs the bot, writes the message templates, connects the number and picks up the phone afterwards is the same person: me.</p>
+          <p>Right now I run one project — a WhatsApp appointment-booking and patient-communication assistant for a dental clinic. I keep the work deliberately small: one clinic done properly at a time, with room to take on one or two more.</p>
+          <p>In practice it looks like this: a patient messages the clinic's WhatsApp number. The bot answers the routine questions, collects what's needed to book, books or reschedules the appointment, and sends a reminder before the visit. The moment something needs a person — an unusual question, a complaint, anything outside its script — it hands the conversation to the clinic's team with the chat history intact.</p>
+          <p class="signoff">— David Belikov, Ramle</p>
+        </div>
+        <div class="panel">
+          <h3>At a glance</h3>
+          <ul class="facts">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One person: <strong>David Belikov</strong>, sole operator in Ramle, Israel — you always talk to the builder.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Current work: one WhatsApp booking &amp; patient-communication assistant for a dental clinic.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Bots run in Hebrew, English or both.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Built on the WhatsApp Business Platform, with opt-in messaging and STOP to opt out.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>A person always takes over when the bot cannot help.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <p><a href="https://bot.kuvello.com/privacy">Privacy policy</a> ·
-  <a href="https://bot.kuvello.com/data-deletion">Data deletion</a></p>
-</section>
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how" aria-labelledby="how-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-h">From first message to confirmed booking</h2>
+          <p>A simple flow that runs on the clinic's own WhatsApp number.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>The patient sends a message</h3>
+            <p>A patient messages the clinic's WhatsApp number to ask a question or request an appointment.</p>
+          </li>
+          <li>
+            <h3>The bot replies and collects details</h3>
+            <p>Kuvello answers common questions instantly and gathers the information needed to book — name, preferred day, and reason for the visit.</p>
+          </li>
+          <li>
+            <h3>It books and reminds</h3>
+            <p>The bot books, reschedules, or cancels the appointment and sends timed reminders before the visit to help reduce no-shows.</p>
+          </li>
+          <li>
+            <h3>A person steps in when needed</h3>
+            <p>Anything the bot cannot handle is handed off to a member of the clinic's team, with the conversation history intact.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-<footer>© 2026 דוד בליקוב, פועל בשם Kuvello</footer>
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-h" style="background:var(--surface-2);border-block:1px solid var(--line-soft);">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Questions clinics ask</p>
+          <h2 id="faq-h">Straight answers</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Do patients need to install anything?</summary>
+            <p>No. Patients use the WhatsApp they already have — they just message the clinic's number the same way they'd message anyone else.</p>
+          </details>
+          <details>
+            <summary>Does it work in Hebrew?</summary>
+            <p>Yes. I build the conversations in Hebrew, English, or both, and the bot replies in the language the patient writes in.</p>
+          </details>
+          <details>
+            <summary>What does it cost?</summary>
+            <p>A one-time setup fee plus a flat monthly fee, agreed before we start — no surprises later. There's no long-term contract: it runs month to month, and you can stop anytime.</p>
+          </details>
+          <details>
+            <summary>How long does setup take?</summary>
+            <p>Usually one to two weeks. Most of that is WhatsApp's own review of the clinic's number and message templates — building the bot itself takes me days, not months.</p>
+          </details>
+          <details>
+            <summary>What happens when the bot gets stuck?</summary>
+            <p>It stops guessing and hands the conversation to your front desk with the chat history attached. Patients are never left arguing with a machine.</p>
+          </details>
+          <details>
+            <summary>Is this allowed by WhatsApp?</summary>
+            <p>Yes — it runs on the official WhatsApp Business Platform, messages only people who opted in, and every patient can reply STOP at any time. WhatsApp is a trademark of Meta Platforms, Inc.; Kuvello is independent and not affiliated with Meta.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- CONTACT -->
+    <section class="section contact-band" id="contact" aria-labelledby="contact-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-h">Talk to me about your clinic</h2>
+          <p style="color:#c9dee2">Tell me how your front desk handles WhatsApp today, and I'll tell you honestly whether a bot will help. Call, email, or use the form — I reply within one business day.</p>
+        </div>
+        <div class="contact-grid">
+          <ul class="contact-list">
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.9"/></svg></span>
+              <span><span class="ck">Business name</span><span class="cv">דוד בליקוב (David Belikov) <span style="font-weight:500;color:#b4d3d9">(trading as Kuvello)</span></span></span>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.9"/></svg></span>
+              <span><span class="ck">Registration</span><span class="cv">עוסק no. [PENDING_TAX_ID]</span></span>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z"/></svg></span>
+              <span><span class="ck">Phone</span><a class="cv" href="tel:+972527458646">0527458646</a></span>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.6 8.6 0 0 1-3.9-.9L3 20l1-5a8.4 8.4 0 1 1 17-3.5Z"/></svg></span>
+              <span><span class="ck">WhatsApp</span><a class="cv" href="https://wa.me/16264718648" rel="noopener">+1 626-471-8648</a></span>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <span><span class="ck">Email</span><a class="cv" href="mailto:support@kuvello.com">support@kuvello.com</a></span>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <span><span class="ck">Address</span><span class="cv"><span class="addr-line" dir="rtl">הלל אברהם 1 מס’ 7 רמלה 7222701</span><span class="addr-translit">Hillel Avraham 1, No. 7, Ramle 7222701, Israel</span></span></span>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <span><span class="ck">Hours</span><span class="cv">Sunday–Thursday, 09:00–18:00 IST</span></span>
+            </li>
+          </ul>
+          <div class="contact-card">
+            <h3>Prefer to write?</h3>
+            <p style="color:#c9dee2">Send me a short note about your clinic and the best way to reach you. The contact form is on the contact page.</p>
+            <p style="margin-bottom:0">
+              <a class="btn btn-primary" href="contact.html" style="background:#fff;color:var(--brand-dark)">Open the contact form</a>
+            </p>
+            <p style="margin:1.1rem 0 0;color:#b4d3d9;font-size:.92rem">Or email <a href="mailto:support@kuvello.com" style="color:#fff">support@kuvello.com</a> directly — replies within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-name">Kuvello</span>
+        <p class="footer-line">Kuvello — WhatsApp Bot Services by David Belikov</p>
+        <p class="footer-desc">WhatsApp appointment-booking and patient-communication bots for dental clinics.</p>
+      </div>
+      <div>
+        <h2 class="footer-h">Contact</h2>
+        <address class="footer-address">
+          <span class="addr-line" dir="rtl">הלל אברהם 1 מס’ 7 רמלה 7222701</span>
+          <span class="addr-translit">Hillel Avraham 1, No. 7, Ramle 7222701, Israel</span>
+          <a href="tel:+972527458646">0527458646</a>
+          <a href="https://wa.me/16264718648" rel="noopener">WhatsApp: +1 626-471-8648</a>
+          <a href="mailto:support@kuvello.com">support@kuvello.com</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer-h">Site</h2>
+        <ul class="footer-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 David Belikov. All rights reserved.</p>
+      <p class="footer-note">WhatsApp is a trademark of Meta Platforms, Inc. Kuvello is independent and is not affiliated with, endorsed by, or sponsored by Meta.</p>
+    </div>
+  </footer>
 </body>
 </html>
