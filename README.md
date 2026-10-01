@@ -1,6 +1,5 @@
-# Kuvello — WhatsApp Bot Services
+# Kuvello
 
-Marketing site for Kuvello, WhatsApp Business API automation operated by david belikov (Ramle, Israel).
+Marketing site for Kuvello, a WhatsApp assistant for dental clinics.
 
-- Phone: +1 626-471-8648
 - Email: support@kuvello.com
