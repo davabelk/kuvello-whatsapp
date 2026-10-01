@@ -38,10 +38,8 @@
     <text x="90" y="482" fill="#cfe8dd" font-size="30" font-weight="500">Appointment booking · reminders · patient FAQ automation</text>
 
     <!-- Footer line -->
-    <text x="90" y="560" fill="#9fd8c3" font-size="26" font-weight="600">+1 626-471-8648</text>
-    <text x="360" y="560" fill="#6fae99" font-size="26" font-weight="500">·</text>
-    <text x="388" y="560" fill="#9fd8c3" font-size="26" font-weight="600">support@kuvello.com</text>
-    <text x="720" y="560" fill="#6fae99" font-size="26" font-weight="500">·</text>
-    <text x="748" y="560" fill="#9fd8c3" font-size="26" font-weight="600">Ramle, Israel</text>
+    <text x="90" y="560" fill="#9fd8c3" font-size="26" font-weight="600">support@kuvello.com</text>
+    <text x="384" y="560" fill="#6fae99" font-size="26" font-weight="500">·</text>
+    <text x="410" y="560" fill="#9fd8c3" font-size="26" font-weight="600">Israel</text>
   </g>
 </svg>
